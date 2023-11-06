@@ -41,6 +41,11 @@ void Enemy::Update()
 
 	if (isAlive_) {
 		pos_ = pos_ + moveDir_ * speed_ * Scene::DeltaTime();
+		if (pos_.x - ENEMY_RECT_SIZE / 2 < 0 || pos_.x + ENEMY_RECT_SIZE / 2 > Scene::Width())
+		{
+			FlipMove();
+			MoveDown();
+		}
 		SetCharaRect({ ENEMY_RECT_SIZE, ENEMY_RECT_SIZE });
 	}
 }

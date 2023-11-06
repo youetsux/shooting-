@@ -21,12 +21,17 @@ void Bullet::SetBBRectSize(SizeF _rectsize)
 {
 	rectSize_ = _rectsize;
 }
-
+//敵を自動で動くように（左右往復＋ちょっとずつプレイヤーに迫ってくる）＋弾も打つ
 void Bullet::Update()
 {
 	if (isAlive_) {
 		pos_ = pos_ + moveDir_ * speed_ * Scene::DeltaTime();
 		SetCharaRect(rectSize_);
+		if (IsMyRectHit(RectF({ 0,0 }, { Scene::Width(), Scene::Height() })) == false)
+		{
+			pos_ = BULLET_INIT_POS;
+			DeActivateMe();
+		}
 	}
 	else
 		return;

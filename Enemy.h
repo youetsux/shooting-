@@ -3,7 +3,8 @@
 
 const int ENEMY_CHR_SIZE{ 48 }; //がぞうさいず
 const double ENEMY_RECT_SIZE{ 48 }; //当たり判定用のBBのサイズ
-const double ENEMY_MOVE_SPEED{ ENEMY_CHR_SIZE / 2 }; //1s当たりの敵の移動スピード
+const double ENEMY_MOVE_SPEED{ 2 * ENEMY_CHR_SIZE }; //1s当たりの敵の移動スピード
+
 
 
 class Enemy :

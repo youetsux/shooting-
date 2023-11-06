@@ -27,6 +27,7 @@ void Player::Initialize()
 	gun_->DeActivateMe();
 	gun_->SetPosition(BULLET_INIT_POS); //画面の外の邪魔にならない場所に弾をおいておく
 	gun_->SetCharaRect(SHOT_RENDER_SIZE);
+	gun_->SetSpeed(PLAYER_BULLET_MOVE_SPEED);
 	gun_->SetMoveDir({ 0, -1 });
 
 
