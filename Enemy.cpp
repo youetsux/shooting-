@@ -28,12 +28,16 @@ void Enemy::Shot()
 
 void Enemy::MoveDown()
 {
+	Vec2 downVec{0, ENEMY_CHR_SIZE/4}; //エネミーのキャラサイズの１／４ぐらいy軸＋方向に動かそう
+	pos_ = pos_ + downVec;//下に動くベクトル
 }
 
 void Enemy::Update()
 {
 	if (KeySpace.down())
 		FlipMove();
+	if (KeyDown.down())
+		MoveDown();
 
 	if (isAlive_) {
 		pos_ = pos_ + moveDir_ * speed_ * Scene::DeltaTime();

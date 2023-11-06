@@ -14,18 +14,21 @@ void Main()
 
 
 	Player* p = new Player; //動的なインスタンス生成
+	p->Initialize(); //プレイヤーの身の回りを初期化する関数
+
+
 	Enemy* e = new Enemy; //動的なインスタンス生成
 	Texture tmp = TextureAsset(U"SHOT1");
-	Bullet* b = new Bullet(tmp);
-	b->SetPosition({ Scene::Center().x, 0 });
-	b->SetMoveDir({ 0, 1 });
-	b->ActivateMe();
+	//Bullet* b = new Bullet(tmp);
+	//b->SetPosition({ Scene::Center().x, Scene::Height()});
+	//b->SetMoveDir({ 0, -1 });
+	//b->ActivateMe();
 
 
 	while (System::Update())
 	{
-		b->Update();
-		b->Draw();
+		//b->Update();
+		//b->Draw();
 
 		p->Update();
 		p->Draw();

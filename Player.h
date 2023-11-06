@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "GameChara.h"
 #include <vector>
-
+#include "Bullet.h"
 
 using std::vector;
 
@@ -19,6 +19,7 @@ enum direction
 class Player :
     public GameChara
 {
+	Bullet* gun_; 
 public:
 	Player();
 	~Player();//解放処理ここでやる？
