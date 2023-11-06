@@ -3,6 +3,7 @@
 #include "Enemy.h"
 #include "Bullet.h"
 
+
 void Main()
 {
 	// 背景の色を設定する | Set the background color
@@ -18,17 +19,12 @@ void Main()
 
 
 	Enemy* e = new Enemy; //動的なインスタンス生成
-	Texture tmp = TextureAsset(U"SHOT1");
-	//Bullet* b = new Bullet(tmp);
-	//b->SetPosition({ Scene::Center().x, Scene::Height()});
-	//b->SetMoveDir({ 0, -1 });
-	//b->ActivateMe();
+	e->Initialize();
+	
 
 
 	while (System::Update())
 	{
-		//b->Update();
-		//b->Draw();
 
 		p->Update();
 		p->Draw();

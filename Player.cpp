@@ -66,10 +66,10 @@ void Player::Update()
 		moveDir_ = { -1.0, 0 };
 		break;
 	case RIGHT:
-		moveDir_ = { 1.0, 0 };
+		moveDir_ = {  1.0, 0 };
 		break;
 	default:
-		moveDir_ = { 0.0, 0.0 };
+		moveDir_ = {  0.0, 0.0 };
 		break;
 	}
 	if (KeyB.down())//キーボードのBキーで弾丸発射
