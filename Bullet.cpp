@@ -32,6 +32,10 @@ void Bullet::Update()
 		return;
 	//画面外に出たら、BULLET_INIT_POSに位置を戻す
 	//ここに
+	//弾の位置　pos_
+	//画面の大きさ　(0,0)-(Scene::Width(), Scene::Height())
+	//初期位置：BULLET_INIT_POS
+	//画面の外に出たら　DeActivateMe()をよぶ
 }
 
 void Bullet::Draw()

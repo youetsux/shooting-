@@ -82,8 +82,6 @@ void Player::Update()
 	gun_->Update();
 	pos_ = pos_ + speed_ * Scene::DeltaTime() * moveDir_;
 	SetCharaRect(SizeF{ PLAYER_RECT_SIZE,PLAYER_RECT_SIZE });
-
-
 }
 
 void Player::Draw()
