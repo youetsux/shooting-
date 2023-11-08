@@ -20,7 +20,7 @@ void Main()
 	TextureAsset::Register(U"ENEMY", U"images\\ships\\9.png");
 	TextureAsset::Register(U"SHOT1", U"images\\shots\\3.png");
 	TextureAsset::Register(U"SHOT2", U"images\\shots\\7.png");
-	TextureAsset::Register(U"BOOOM", U"💥"_emoji);
+	TextureAsset::Register(U"BOOOM", U"images\\explosion.png");
 
 
 
@@ -33,6 +33,9 @@ void Main()
 	
 	while (System::Update())
 	{
+		for (auto& theI : bombList)
+			theI->Update();
+
 		for (auto& theI : bombList)
 			theI->Draw();
 
