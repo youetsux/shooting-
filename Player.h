@@ -26,6 +26,7 @@ public:
 	~Player();//解放処理ここでやる？
 	//Player(int _maxBullet);
 	void Initialize();
+	Bullet* GetBullet() { return gun_; }
 	void Release();//それともここでやる？
 	direction GetDirection();
 	void Update() override;
