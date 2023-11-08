@@ -10,6 +10,7 @@ Bullet::Bullet(Texture& _tex)
 	SetCharaRect(rectSize_);
 	moveDir_ = { 0, -1 };
 	isAlive_ = false;
+
 }
 
 void Bullet::SetRenderSize(SizeF _rendersize)

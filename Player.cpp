@@ -93,7 +93,7 @@ void Player::Draw()
 	}
 	if (isAlive_) {
 		tex_.resized(PLAYER_CHR_SIZE).drawAt(pos_);
-		//rect_.drawFrame(1, 1, Palette::Red);
+		rect_.drawFrame(1, 1, Palette::Red);
 	}
 }
 

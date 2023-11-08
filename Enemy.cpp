@@ -34,6 +34,8 @@ void Enemy::Initialize()
 	gun_->SetCharaRect(ENEMY_BULLET_RECT_SIZE);
 	gun_->SetSpeed(ENEMY_BULLET_MOVE_SPEED);
 	gun_->SetMoveDir({ 0,  1 });
+	timer_ = new CTimer(ENEMY_SHOT_INTERVAL);
+	timer_->StartTimer();
 }
 
 void Enemy::Shot()
@@ -52,10 +54,18 @@ void Enemy::MoveDown()
 
 void Enemy::Update()
 {
-
-	Shot();
-
 	if (isAlive_) {
+		if (timer_->IsTimeOver())
+		{
+			Shot();
+			timer_->ResetTimer();
+		}
+		else
+		{
+			timer_->Update();
+		}
+
+
 		pos_ = pos_ + moveDir_ * speed_ * Scene::DeltaTime();
 
 		if (pos_.x - ENEMY_RECT_SIZE / 2 < 0 || pos_.x + ENEMY_RECT_SIZE / 2 > Scene::Width())
@@ -71,7 +81,7 @@ void Enemy::Update()
 
 void Enemy::Draw()
 {
-	if(gun_->isActive())
+	if (gun_->isActive())
 		gun_->Draw();
 
 	if (isAlive_) {

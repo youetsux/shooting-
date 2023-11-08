@@ -4,6 +4,9 @@
 #include "Bullet.h"
 
 
+void PlayerBulletVSEnemy(Bullet* _b, Enemy* _e);
+
+
 void Main()
 {
 	// 背景の色を設定する | Set the background color
@@ -25,7 +28,7 @@ void Main()
 
 	while (System::Update())
 	{
-
+		PlayerBulletVSEnemy(p->GetBullet(), e);
 		p->Update();
 		p->Draw();
 		e->Update();
@@ -33,4 +36,16 @@ void Main()
 	}
 }
 
+
+void PlayerBulletVSEnemy(Bullet* _b, Enemy* _e)
+{
+	if (_b->isActive() == false)
+		return;
+
+	if (_b->IsMyRectHit(_e->GetCharaRect()))
+	{
+		_b->DeActivateMe();
+		_e->DeActivateMe();
+	}
+}
 
