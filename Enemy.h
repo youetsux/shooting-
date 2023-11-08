@@ -23,6 +23,7 @@ public:
 	Enemy(Vec2 _pos);
 	Enemy();
 	void Initialize();
+	Bullet* GetBullet() { return(gun_); }
 	void Shot(); //敵が弾を撃つよ
 	void FlipMove() { moveDir_ = -moveDir_; } //敵が反対方向に移動
 	void MoveDown(); //下に決まった距離下がる
